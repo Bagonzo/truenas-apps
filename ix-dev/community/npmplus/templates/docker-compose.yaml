@@ -1,0 +1,33 @@
+{% set tpl = ix_lib.base.render.Render(values) %}
+
+{% set npmplus = tpl.add_container(values.consts.npmplus_container_name, "image") %}
+
+{% do npmplus.add_caps(["SETUID", "SETGID", "CHOWN", "FOWNER", "DAC_OVERRIDE"]) %}
+
+{% do npmplus.healthcheck.set_custom_test(["CMD", "healthcheck.sh"]) %}
+
+{% do npmplus.add_extra_host("host.docker.internal", "host-gateway") %}
+
+{% do npmplus.environment.add_user_envs(values.npmplus.additional_envs) %}
+
+{% if not values.network.host_network %}
+  {% do npmplus.add_port(values.network.web_port, {"container_port": 81}) %}
+  {% do npmplus.add_port(values.network.http_port, {"container_port": 80}) %}
+  {% do npmplus.add_port(values.network.https_port, {"container_port": 443}) %}
+  {% do npmplus.add_port(values.network.https_port, {"container_port": 443, "protocol":"udp"}) %} 
+  {% for port in values.network.additional_ports %}
+    {% do npmplus.add_port(port) %}
+  {% endfor %}
+{% endif %}
+
+{% do npmplus.add_storage(values.consts.data_path, values.storage.data) %}
+
+{% for store in values.storage.additional_storage %}
+  {% do npmplus.add_storage(store.mount_path, store) %}
+{% endfor %}
+
+{% do tpl.portals.add(values.network.web_port) %}
+
+{% do tpl.notes.set_body(values.consts.notes_body) %}
+
+{{ tpl.render() | tojson }}
