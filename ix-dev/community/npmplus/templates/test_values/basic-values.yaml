@@ -11,18 +11,18 @@ npmplus:
 network:
   web_port:
     bind_mode: published
-    port_number: 10081
+    port_number: 8081
   http_port:
     bind_mode: published
-    port_number: 10080
+    port_number: 8080
   https_port:
     bind_mode: published
-    port_number: 10443
+    port_number: 8443
   additional_ports: []
 
 run_as:
-  user: 1001
-  group: 1001
+  user: 568
+  group: 568
 
 ix_volumes:
   data: /opt/tests/mnt/npmplus/data
