@@ -1,20 +1,20 @@
 groups:
-  - name: NPMplus Configuration
-    description: Configure NPMplus
+  - name: Nginx Proxy Manager Plus Configuration
+    description: Configure Nginx Proxy Manager Plus
   - name: User and Group Configuration
-    description: Configure User and Group for NPMplus
+    description: Configure User and Group for Nginx Proxy Manager Plus
   - name: Network Configuration
-    description: Configure Network for NPMplus
+    description: Configure Network for Nginx Proxy Manager Plus
   - name: Storage Configuration
-    description: Configure Storage for NPMplus
+    description: Configure Storage for Nginx Proxy Manager Plus
   - name: Labels Configuration
-    description: Configure Labels for NPMplus
+    description: Configure Labels for Nginx Proxy Manager Plus
   - name: Resources Configuration
-    description: Configure Resources for NPMplus
+    description: Configure Resources for Nginx Proxy Manager Plus
 
 questions:
   - variable: TZ
-    group: NPMplus Configuration
+    group: Nginx Proxy Manager Plus Configuration
     label: Timezone
     schema:
       type: string
@@ -25,7 +25,7 @@ questions:
 
   - variable: npmplus
     label: ""
-    group: NPMplus Configuration
+    group: Nginx Proxy Manager Plus Configuration
     schema:
       type: dict
       attrs:
@@ -58,7 +58,7 @@ questions:
       attrs:
         - variable: user
           label: User ID
-          description: The user id that NPMplus files will be owned by.
+          description: The user id that Nginx Proxy Manager Plus files will be owned by.
           schema:
             type: int
             min: 568
@@ -66,7 +66,7 @@ questions:
             required: true
         - variable: group
           label: Group ID
-          description: The group id that NPMplus files will be owned by.
+          description: The group id that Nginx Proxy Manager Plus files will be owned by.
           schema:
             type: int
             min: 568
@@ -579,14 +579,14 @@ questions:
             attrs:
               - variable: cpus
                 label: CPUs
-                description: CPUs limit for NPMplus.
+                description: CPUs limit for Nginx Proxy Manager Plus.
                 schema:
                   type: int
                   default: 2
                   required: true
               - variable: memory
                 label: Memory (in MB)
-                description: Memory limit for NPMplus.
+                description: Memory limit for Nginx Proxy Manager Plus.
                 schema:
                   type: int
                   default: 4096

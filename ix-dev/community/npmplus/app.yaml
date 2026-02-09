@@ -13,7 +13,7 @@ capabilities:
 categories:
 - networking
 changelog_url: https://github.com/ZoeyVid/NPMplus/releases
-date_added: '2026-02-08'
+date_added: '2026-02-09'
 description: Nginx Proxy Manager but better!
 home: https://github.com/ZoeyVid/NPMplus/
 host_mounts: []
