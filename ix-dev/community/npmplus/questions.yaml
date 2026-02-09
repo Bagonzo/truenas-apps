@@ -61,16 +61,16 @@ questions:
           description: The user id that NPMplus files will be owned by.
           schema:
             type: int
-            min: 0
-            default: 1001
+            min: 568
+            default: 568
             required: true
         - variable: group
           label: Group ID
           description: The group id that NPMplus files will be owned by.
           schema:
             type: int
-            min: 0
-            default: 1001
+            min: 568
+            default: 568
             required: true
 
   - variable: network
