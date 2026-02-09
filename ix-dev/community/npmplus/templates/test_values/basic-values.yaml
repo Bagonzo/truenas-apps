@@ -12,15 +12,12 @@ network:
   web_port:
     bind_mode: published
     port_number: 10081
-
   http_port:
     bind_mode: published
     port_number: 10080
-
   https_port:
     bind_mode: published
     port_number: 10443
-
   additional_ports: []
 
 run_as:
@@ -36,9 +33,4 @@ storage:
     ix_volume_config:
       dataset_name: data
       create_host_path: true
-      
-  additional_storage:
-    - type: anonymous
-      mount_path: /scratchpad
-      volume_config:
-        nocopy: true
+  additional_storage: []

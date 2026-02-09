@@ -1,71 +1,46 @@
 annotations:
   min_scale_version: 25.10.1
-
-# Using NPMplus' upstream app (Nginx Proxy Manager) version
-# https://github.com/ZoeyVid/NPMplus/blob/develop/.version
-app_version: 2.13.7 
-
+app_version: 2.13.7
 capabilities:
 - description: NPMplus is able to change file ownership arbitrarily
   name: CHOWN
-
 - description: NPMplus is able to bypass file permission checks
   name: DAC_OVERRIDE
-
 - description: NPMplus is able to bypass permission checks for file operations
   name: FOWNER
-
 - description: NPMplus is able to change group ID of processes
   name: SETGID
-
 - description: NPMplus is able to change user ID of processes
   name: SETUID
-
 categories:
 - networking
-
 changelog_url: https://github.com/ZoeyVid/NPMplus/releases
-
 date_added: '2026-02-08'
-
 description: Nginx Proxy Manager but better!
-
 home: https://github.com/ZoeyVid/NPMplus/
-
 host_mounts: []
-
 icon: https://github.com/ZoeyVid/NPMplus/blob/develop/frontend/public/images/logo-text-vertical-grey.png
-
 keywords:
 - reverse
 - nginx
 - proxy
 - npmplus
-
 lib_version: 2.1.78
-
 lib_version_hash: 704d8b93e03eb32f66350c926e93f9f1f7e43f21c1bfbd4d28d4035c6fcd77e4
-
 maintainers:
 - email: dev@truenas.com
   name: truenas
   url: https://www.truenas.com/
-
 name: npmplus
-
 run_as_context:
 - description: Container [npmplus] can run as root user and group.
   gid: 0
   group_name: Host group is [root]
   uid: 0
   user_name: Host user is [root]
-
 sources:
 - https://github.com/ZoeyVid/NPMplus/
 - https://ghcr.io/zoeyvid/npmplus
-
 title: Nginx Proxy Manager Plus
-
 train: community
-
 version: 1.0.0
