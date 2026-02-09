@@ -17,7 +17,7 @@ date_added: '2026-02-09'
 description: Nginx Proxy Manager but better!
 home: https://github.com/ZoeyVid/NPMplus/
 host_mounts: []
-icon: https://github.com/ZoeyVid/NPMplus/blob/develop/frontend/public/images/logo-text-vertical-grey.png
+icon: https://media.sys.truenas.net/apps/npmplus/icons/icon.svg
 keywords:
 - reverse
 - nginx
